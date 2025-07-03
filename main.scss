@@ -1,1 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.people { 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px;
+  column-gap: 30px;
+  row-gap: 40px;
+  position: fixed;
+  margin: 30px 35px;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.person {
+  position: relative;
+  height: 231px;
+  width: 200px;
+  
+   :hover {
+    .extra {
+      display: block;
+    }
+  }
+}
+
+.photo {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__radius {
+      border-radius: 50%;
+      transition: border-radius 1s;
+      transition-delay: 1s;
+    }
+    &__radius:hover {
+      border-radius: 25%;
+    }
+    
+  .rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translate(right, 50%);
+    color: #8B0000;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+  }
+  
+}
+
+.details {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.name {
+  font-size: 20px;
+  color: #2F4F4F;
+  font-weight: 700;
+}
+
+.extra {
+  font-weight: 400;
+  font-size: 18px;
+  color: #000;
+  display: none;
+
+ 
+}
